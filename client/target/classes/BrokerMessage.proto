@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_outer_classname = "BrokerMessage";  //对外输出的Class名
+
+option java_package = "com.cug.liqiushi.client.vo";  //指定包名
+
+
+enum ResCode{
+    SUCCESS = 0;
+    FAIL = 1 ;
+}
+
+message BaseResponse {
+    ResCode resCode = 1;
+    string resMsg = 2;
+}
+
+message MessageContent {
+    string topic = 1;
+    int32 queue = 2;   //int
+    int64 offset = 3;  //long
+    int32 size = 4;
+    int64 createTime = 5;
+    bytes content = 6;
+}
+
+message PushMessageRequest {
+    string topic = 1;
+    int32 queue = 2;
+    bytes content = 3;
+}
+
+message PushMessageResponse {
+    BaseResponse baseResponse = 1;
+}
+
+message PullMessageRequest {
+    string topic = 1;
+    int32 queue = 2;
+    int64 offset = 3;
+    int32 msgCount = 4;
+}
+
+message PullMessageResponse {
+    BaseResponse baseResponse = 1;
+    repeated MessageContent contents = 2;
+}
+
