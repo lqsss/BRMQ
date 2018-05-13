@@ -1,4 +1,4 @@
-package com.cug.liqiushi.broker.util;
+package com.cug.liqiushi.zookeeper.util;
 
 import java.io.*;
 import java.util.Properties;

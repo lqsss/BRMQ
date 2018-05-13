@@ -1,32 +1,32 @@
-package com.cug.liqiushi.broker.config;
+package com.cug.liqiushi.zookeeper.config;
 
-import com.cug.liqiushi.broker.util.PropertiesReader;
+
+import com.cug.liqiushi.zookeeper.util.PropertiesReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Created by lqs on 2018/5/7.
  */
-public class ZKConfig {
-    private static final Logger log = LoggerFactory.getLogger(ZKConfig.class);
+public class ZkConfig {
+    private static final Logger log = LoggerFactory.getLogger(ZkConfig.class);
     //读取资源文件 单例
     private static final PropertiesReader propertiesReader = PropertiesReader.getInstance();
     private String zkServers;
-    private int connectionTimeoutMs = 500;
-    private int sessionTimeoutMs = 5000;
-    private int retryCount = 3;
-    private int retryIntervalMs = 1000;
-    private String basePath = "/distmq";
+    private int connectionTimeoutMs;
+    private int sessionTimeoutMs;
+    private int retryCount;
+    private int retryIntervalMs;
 
-    private ZKConfig() {
+    private ZkConfig() {
         getConfigByReader();
     }
 
     private static class singletonHolder {
-        private static ZKConfig zkConfig = new ZKConfig();
+        private static ZkConfig zkConfig = new ZkConfig();
     }
 
-    public ZKConfig getInstance() {
+    public static ZkConfig getInstance() {
         return singletonHolder.zkConfig;
     }
 
@@ -77,14 +77,4 @@ public class ZKConfig {
     public void setRetryIntervalMs(int retryIntervalMs) {
         this.retryIntervalMs = retryIntervalMs;
     }
-
-    public String getBasePath() {
-        return basePath;
-    }
-
-    public void setBasePath(String basePath) {
-        this.basePath = basePath;
-    }
-
-
 }
