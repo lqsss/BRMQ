@@ -2,6 +2,8 @@
 
 [研究背景与意义](https://lqsss.github.io/2018/05/14/%E5%9F%BA%E4%BA%8ERaft%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97RMBQ/)
 [BRMQ记录](https://lqsss.github.io/2018/05/14/BRMQ/)
+
+
 BRMQ的开发记录，其中包括以下几点：
 1. 日常进度
 2. 问题小结
