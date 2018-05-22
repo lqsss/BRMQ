@@ -1,11 +1,4 @@
 # BRMQ
----
-title: BRMQ记录
-tag: 
-- message queue
-- Self study
-categories: distributed
----
 
 BRMQ的开发记录，其中包括以下几点：
 1. 日常进度
